@@ -91,8 +91,7 @@ const inputBase = {
   paddingRight: 20,
   marginTop: 8,
   marginBottom: 8,
-  border: 'none',
-  outline: 'none',
+  borderWidth: 0,
 }
 
 const styles = StyleSheet.create({

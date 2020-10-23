@@ -31,10 +31,11 @@ export default function IngredientListScreen({ navigation }) {
         renderItem={renderIngredient}
         keyExtractor={(item, i) => i}
       />
-      <Pressable onPress={() => navigation.navigate('AddIngredient')}>
-        <View style={styles.button}>
-          <AntDesign name='plus' size={24} color='#FCFCFC' />
-        </View>
+      <Pressable
+        onPress={() => navigation.navigate('AddIngredient')}
+        style={styles.button}
+      >
+        <AntDesign name='plus' size={24} color='#FCFCFC' />
       </Pressable>
     </View>
   )
@@ -59,5 +60,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     right: 16,
     bottom: 32,
+    zIndex: 1,
   },
 })
