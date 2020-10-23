@@ -25,7 +25,7 @@ export default function BottomTabNavigator() {
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name='ios-code' color={color} />
+            <TabBarIcon name='ios-basket' color={color} />
           ),
         }}
       />
@@ -34,7 +34,7 @@ export default function BottomTabNavigator() {
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name='ios-code' color={color} />
+            <TabBarIcon name='ios-albums' color={color} />
           ),
         }}
       />
