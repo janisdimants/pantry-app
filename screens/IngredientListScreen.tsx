@@ -1,6 +1,14 @@
 import * as React from 'react'
-import { StyleSheet, Button, FlatList, Text, View } from 'react-native'
+import {
+  StyleSheet,
+  Button,
+  FlatList,
+  Text,
+  View,
+  Pressable,
+} from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
+import { AntDesign } from '@expo/vector-icons'
 
 import Ingredient from '../components/Ingredient'
 import { add } from '../store/pantry/actions'
@@ -9,11 +17,10 @@ import { Unit } from '../types'
 export default function IngredientListScreen({ navigation }) {
   const state = useSelector((state) => state)
 
-  const renderIngredient = ({ item }) => <Ingredient name={item.name} />
+  const renderIngredient = ({ item }) => <Ingredient {...item} />
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Pantry</Text>
       <View
         style={styles.separator}
         lightColor='#eee'
@@ -22,15 +29,35 @@ export default function IngredientListScreen({ navigation }) {
       <FlatList
         data={state.pantry.ingredients}
         renderItem={renderIngredient}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item, i) => i}
       />
-      <Button onPress={() => navigation.navigate('AddIngredient')} title='+' />
+      <Pressable onPress={() => navigation.navigate('AddIngredient')}>
+        <View style={styles.button}>
+          <AntDesign name='plus' size={24} color='#FCFCFC' />
+        </View>
+      </Pressable>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    backgroundColor: 'white',
+    position: 'relative',
+    flex: 1,
+  },
   title: {},
   separator: {},
+  button: {
+    position: 'absolute',
+    width: 54,
+    height: 54,
+    borderRadius: 27,
+    backgroundColor: '#5F2EEA',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    right: 16,
+    bottom: 32,
+  },
 })

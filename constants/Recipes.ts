@@ -37,6 +37,7 @@ export const recipes: Recipe[] = [
       'Knead the mixture together until it forms a dough, then press into the base of the prepared tin.',
       'Prick the shortbread lightly with a fork and bake for 20 minutes or until firm to the touch and very lightly browned. Leave to cool in the tin.',
     ],
+    cookingTime: 45,
   },
 ]
 

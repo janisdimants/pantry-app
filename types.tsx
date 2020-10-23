@@ -51,4 +51,5 @@ export interface Recipe {
   ingredients: Ingredient[]
   steps: string[]
   types: RecipeType[]
+  cookingTime: number
 }
